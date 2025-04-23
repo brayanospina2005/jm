@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Lato', sans-serif;
+    @apply text-neutral-800;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bodoni Moda', serif;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply px-4 py-2 text-sm font-medium transition-colors relative;
+  }
+
+  .nav-link:hover span {
+    @apply scale-x-100;
+  }
+
+  .section-title {
+    @apply font-bodoni text-4xl md:text-5xl font-semibold mb-6;
+  }
+
+  .glass-nav {
+    @apply bg-white/80 backdrop-blur-md border-b border-neutral-200/50;
+  }
+}
+
+/* Mobile menu animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mobile-menu-enter {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Fix for mobile viewport height */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+}
