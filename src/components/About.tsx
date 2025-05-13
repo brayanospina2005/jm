@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import quienesSomosImg from '../assets/images/imagen quienes somos.jpg';
 
 const About = () => {
   const { t } = useTranslation();
@@ -9,7 +10,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop"
+              src={quienesSomosImg}
               alt="Interior elegante y moderno"
               className="rounded-lg shadow-xl"
             />
