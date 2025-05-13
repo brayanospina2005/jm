@@ -129,7 +129,7 @@ const Navbar = () => {
       </nav>
 
       <a
-        href="https://wa.me/573006138546?text=Hola,%20necesito%20información%20sobre%20sus%20servicios%20de%20reformas"
+        href="https://wa.me/573180092000?text=Hola,%20necesito%20información%20sobre%20sus%20servicios%20de%20reformas"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20BA5C] transition-colors z-50"

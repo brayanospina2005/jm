@@ -54,7 +54,7 @@ const translations = {
         info: {
           title: 'Información de Contacto',
           email: 'reformasyacabadosjm@gmail.com',
-          phone: '+57 300 6138546',
+          phone: '+57 3180092000',
           address: 'Medellín, Colombia',
         },
         form: {
@@ -134,7 +134,7 @@ const translations = {
         info: {
           title: 'Contact Information',
           email: 'reformasyacabadosjm@gmail.com',
-          phone: '+57 300 6138546',
+          phone: '+57 3180092000',
           address: 'Medellín, Colombia',
         },
         form: {
