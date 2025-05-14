@@ -1,15 +1,26 @@
 import livingImg from '../assets/images/living.jpg';
 import kitchenImg from '../assets/images/kitchen.jpg';
 import bedroomImg from '../assets/images/bedroom.jpg';
-import officeImg from '../assets/images/office.jpg';
 import bathroomImg from '../assets/images/bathroom.jpg';
 import diningImg from '../assets/images/dining.jpg';
+import img1 from '../assets/images/IMG-20250421-WA0003.jpg';
+import img2 from '../assets/images/IMG-20250421-WA0007.jpg';
+import img3 from '../assets/images/IMG-20250421-WA0011.jpg';
+import img4 from '../assets/images/IMG-20250421-WA0016.jpg';
+import img5 from '../assets/images/IMG-20250421-WA0021.jpg';
+import img6 from '../assets/images/IMG-20250421-WA0023.jpg';
+import img7 from '../assets/images/IMG-20250513-WA0013.jpg';
+import img8 from '../assets/images/IMG-20250513-WA0021.jpg';
+import img9 from '../assets/images/IMG-20250513-WA0030.jpg';
+import img10 from '../assets/images/IMG-20250513-WA0006.jpg';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 
 const ProjectGallery = () => {
   const { t } = useTranslation();
+  const [showAll, setShowAll] = useState(false);
 
-  const projects = [
+  const mainProjects = [
     {
       image: livingImg,
       title: t('services.projects.categories.living'),
@@ -26,11 +37,6 @@ const ProjectGallery = () => {
       category: t('services.projects.categories.bedroom')
     },
     {
-      image: officeImg,
-      title: t('services.projects.categories.office'),
-      category: t('services.projects.categories.office')
-    },
-    {
       image: bathroomImg,
       title: t('services.projects.categories.bathroom'),
       category: t('services.projects.categories.bathroom')
@@ -39,14 +45,32 @@ const ProjectGallery = () => {
       image: diningImg,
       title: t('services.projects.categories.dining'),
       category: t('services.projects.categories.dining')
+    },
+    {
+      image: img10, title: 'Proyecto 10'
     }
   ];
+
+  const extraImages = [
+    { image: img1, title: 'Proyecto 1' },
+    { image: img2, title: 'Proyecto 2' },
+    { image: img3, title: 'Proyecto 3' },
+    { image: img4, title: 'Proyecto 4' },
+    { image: img5, title: 'Proyecto 5' },
+    { image: img6, title: 'Proyecto 6' },
+    { image: img7, title: 'Proyecto 7' },
+    { image: img8, title: 'Proyecto 8' },
+    { image: img9, title: 'Proyecto 9' }
+  ];
+
+  const allProjects = [...mainProjects, ...extraImages];
+  const projectsToShow = showAll ? allProjects : mainProjects;
 
   return (
     <div className="mt-20">
       <h2 className="section-title text-primary text-center">{t('services.projects.title')}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-        {projects.map((project, index) => (
+        {projectsToShow.map((project, index) => (
           <div key={index} className="group relative overflow-hidden rounded-lg">
             <img
               src={project.image}
@@ -58,6 +82,16 @@ const ProjectGallery = () => {
           </div>
         ))}
       </div>
+      {!showAll && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => setShowAll(true)}
+            className="px-6 py-3 bg-primary text-white rounded-md font-semibold hover:bg-primary/90 transition-colors shadow-lg"
+          >
+            Ver más
+          </button>
+        </div>
+      )}
     </div>
   );
 };
